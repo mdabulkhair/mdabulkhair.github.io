@@ -1,4 +1,4 @@
-let words = document.querySelectorAll(".word");
+brlet words = document.querySelectorAll(".word");
 words.forEach((word)=>{
     let letters = word.textContent.split("");
     word.textContent="";
@@ -37,3 +37,35 @@ currentWordIndex = currentWordIndex === maxWordIndex ? 0 :currentWordIndex + 1;
 
 changeText();
 setInterval(changeText,3000)
+
+
+
+window.addEventListener('scroll', function() {
+    var scrollButton = document.querySelector('.scroll-to-top');
+    if (window.scrollY > 300) {
+      scrollButton.classList.add('show');
+    } else {
+      scrollButton.classList.remove('show');
+    }
+  });
+  
+  document.querySelector('.scroll-to-top').addEventListener('click', function(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+
+  
+  document.querySelector('.contact-form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // You can perform form submission logic here
+    // For example, you can collect form data and send it to a server using AJAX
+    // Once the form is submitted, you can display a success message or clear the form fields
+    this.reset();
+  });
+
+
+
+
+  
+  
+  
